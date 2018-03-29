@@ -10,6 +10,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an
 
 https://serversforhackers.com/c/ansible-installation-and-basics
 
+### Public Key Infrastructure
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-ssh-configuration-keypairs
+
 ### Managing Servers and the Hosts File
 
 http://docs.ansible.com/ansible/latest/intro_inventory.html
