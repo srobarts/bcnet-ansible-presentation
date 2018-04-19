@@ -15,6 +15,7 @@ sudo apt-get install ansible
 ```
 
 #### On Mac
+( Using Homebrew: https://brew.sh/ )
 ```
 brew install ansible
 ```
