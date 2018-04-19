@@ -14,7 +14,7 @@ sudo apt-get update
 sudo apt-get install ansible
 ```
 
-### On Mac
+#### On Mac
 ```
 brew install ansible
 ```
