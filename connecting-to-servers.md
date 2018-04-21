@@ -58,6 +58,21 @@ You can also copy over the public key using this command:
 ```
 cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 ```
+### Setting up your Ansible user
+
+There is another step before we are ready to communicate with our server via Ansible
+
+By default Ansible will try to communicate with the servers via which ever user it is running as.  I usually sudo to root when I am doing administration, but on the servers I want Ansible to run as the ansible user. We solve this problem by creating a variable.
+
+- In your /etc/ansible directory create a directory called 'group-vars'
+- Then in that directory create a file called 'all'
+- Add the following lines to the 'all' file
+```
+---
+ansible_ssh_user: ansible
+```
+This is a YAML formatted file, so the three dashes at the top are necessary, don't forget them. The directive in this file 'ansible_ssh_user' tells Ansible to use the user ansible on the servers it is altering
+
 Ansible should now be able to communicate with the target servers, from the controller server.
 
 We will test this in the next section with the Ansible Ping module.
