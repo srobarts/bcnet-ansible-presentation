@@ -1,14 +1,14 @@
-## Ad-Hoc Commands
+# Ad-Hoc Commands
 
 **_Ad-hoc commands are one-off commands that you can run on one or more servers, from Ansible_**
 
-Structure:
+### Structure:
 
 ansible _group_ -m _module_ -a _arguments_
 
 _By default ansible will run the Command module to run your commands
 
-Example:
+### Example:
 ```
 ansible web-servers -m ping
 ```
@@ -19,8 +19,8 @@ The result should look like the following:
 
 ```
 
-Pay attention to the fact that the result shows "changed":false
-This tells us that there was no change to the state of the server, only that a ping was performed.
+_Pay attention to the fact that the result shows "changed":false_
+_This tells us that there was no change to the state of the server, only that a ping was performed._
 
 
 

@@ -1,4 +1,4 @@
-#### Setting up the hosts file
+# Setting up the hosts file
 
 Ansible uses an inventory file called hosts to keep track of what servers it need to communicate with
 
