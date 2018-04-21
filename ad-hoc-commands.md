@@ -1,6 +1,8 @@
 ## Ad-Hoc Commands
 
-**_Ad-hoc commands are one-off commands that you can run on one or more servers, from Ansible_**
+Ad-hoc commands are one-off commands that you can run on one or more servers, from Ansible
+
+They are useful for situations where you only need to do one or two actions, and don't need the complexity of a playbook.
 
 ### Structure:
 
@@ -16,7 +18,18 @@ This will run the ping module on all of the hosts in the web-servers group.
 
 The result should look like the following:
 ```
-
+node4.blinklab.ca | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node3.blinklab.ca | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node2.blinklab.ca | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
 ```
 
 _Pay attention to the fact that the result shows "changed":false_
