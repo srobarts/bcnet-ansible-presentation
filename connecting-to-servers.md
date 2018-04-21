@@ -19,7 +19,39 @@ The sudoers configuration will need to setup to allow users of the group wheel t
 
 ### Key-based authentication to servers
 
-Then from the Ansible controller server (where Ansible is installed), we will need to share the public key established on that server with the two target servers.
+Once we have created the ansible user, we can move on to creating and sharing our SSH keypair
+
+First we need to create our keypair:
 ```
-ssh-copy-id ansible@192.168.0.1
+sudo ssh-keygen -t rsa
 ```
+The process will prompt you for some information. You can accept most of the defaults.
+
+You can choose whether or not you want to use a keyphrase, a keyphrase adds more security, but is not required.
+
+Your public key is now here:
+```
+/home/ansible/.ssh/id_rsa.pub
+```
+And your private key is here:
+```
+/home/ansible/.ssh/id_rsa
+```
+**_Never, ever, ever, share your private key_**
+
+Next we will need to share the public key with our target servers.  This can be done with the following command:
+```
+ssh-copy-id ansible@159.89.126.191
+```
+_This assumes the ansible user is already created on the target server, and we can SSH as this user._
+
+If you are a Mac user, you will need to install ssh-copy-id using Homebrew:
+```
+brew install ssh-copy-id
+```
+You can also copy over the public key using this command:
+```
+cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+```
+
+
