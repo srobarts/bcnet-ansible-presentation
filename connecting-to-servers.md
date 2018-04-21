@@ -1,6 +1,6 @@
-# Configuring connections to target servers
+## Configuring connections to target servers
 
-## Creating the Ansible user
+### Creating the Ansible user
 
 We want to create a non-root user on the target machines that Ansible will use for running commands
 
@@ -17,7 +17,7 @@ usermod -a -G wheel ansible
 ```
 The sudoers configuration will need to setup to allow users of the group wheel to run all commands.
 
-## Key-based authentication to servers
+### Key-based authentication to servers
 
 Then from the Ansible controller server (where Ansible is installed), we will need to share the public key established on that server with the two target servers.
 ```

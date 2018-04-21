@@ -1,4 +1,4 @@
-# Ad-Hoc Commands
+## Ad-Hoc Commands
 
 **_Ad-hoc commands are one-off commands that you can run on one or more servers, from Ansible_**
 
