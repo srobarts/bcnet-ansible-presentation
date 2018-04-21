@@ -17,6 +17,11 @@ usermod -a -G wheel ansible
 ```
 The sudoers configuration will need to setup to allow users of the group wheel to run all commands.
 
+To check to see all users of the group 'wheel' run this command:
+```
+sudo grep 'wheel' /etc/group
+```
+
 ### Key-based authentication to servers
 
 Once we have created the ansible user, we can move on to creating and sharing our SSH keypair
@@ -53,5 +58,7 @@ You can also copy over the public key using this command:
 ```
 cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 ```
+Ansible should now be able to communicate with the target servers, from the controller server.
 
+We will test this in the next section with the Ansible Ping module.
 

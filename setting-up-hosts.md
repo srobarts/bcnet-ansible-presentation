@@ -22,8 +22,3 @@ The servers list consists of the group name - "web-servers" and the list of serv
 
 Using this functionality you can deal with groups of servers at once, by referring to the group name.
 
-As an example, you can now test the connection to these servers with a ping command:
-```
-ansible all -m ping
-```
-The result should look like this:
