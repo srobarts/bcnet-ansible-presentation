@@ -1,7 +1,7 @@
 ## Basic Playbook
 
 
-Basic playbook to installed HTTPD (apache web server) and open ports 80 and 443 on firewall
+Below is a basic playbook to install and enable HTTPD (apache web server), install and enable firewalld, and open ports 80 and 443 on firewall.
 
 ```
 ---
@@ -37,8 +37,8 @@ Basic playbook to installed HTTPD (apache web server) and open ports 80 and 443 
 ```
 So, what is happening here?
 
-1. We are telling Ansible to run this playbook on our web-servers group in hosts
-2. We are telling Ansible to sudo "become: yes"
+1. We are telling Ansible to run this playbook on our "web-servers" group in our hosts file
+2. We are telling Ansible to sudo - "become: yes"
 3. We are installing httpd
 4. We are enabling the httpd service
 5. We are installing firewalld
@@ -53,5 +53,11 @@ ansible-playbook apache.yml --ask-become-pass
 This command tells Ansible to run the playbook "apache.yml" and ask for the sudo password when it does so.
 
 The playbook can be run again and again, and it won't do this actions again and again, because of idempotence.  If httpd is installed already, it won't install it again, it will gather facts (gathering the state of the server), and determine that httpd is installed already.
+
+If you want to play around with this, you could issue an ad-hoc command to uninstall Apache httpd from node 2:
+```
+sudo ansible node2 -m yum -a "name=httpd state=absent" --become --ask-become-pass
+```
+Then re-run the playbook "apache.yml".  It will detect that Apache httpd is missing from node2 and reinstall it.
 
 
