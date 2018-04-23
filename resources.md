@@ -50,6 +50,12 @@ Wordpress example:
 
 https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx_rhel7
 
+### WP-CLI
+
+https://wp-cli.org/
+
+https://developer.wordpress.org/cli/commands/
+
 
 
 

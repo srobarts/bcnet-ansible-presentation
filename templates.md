@@ -55,6 +55,6 @@ As can be seen, variables are being used to replace values.
 This template can then be used for writing the wp-config.php file in the playbook.  This is illustrated in this section from the playbook:
 ```
 - name: Copy Wordpress config file from template
-  template: src=wp-config.php dest=/var/www/html/
+  template: src=wp-config.j2 dest=/var/www/html/
 ```
 The variables (the parts within the {{ }} brackets) will be replaced by values defined in the vars folder.
