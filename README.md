@@ -5,4 +5,16 @@ Traditionally web servers were built by issuing specific commands via the comman
 
 The fundamental issue is automation and consistency of configuration. Also there is the ability to spin up new machines in minutes.
 
+Running the basic playbook:
+```
+ansible-playbook apache.yml --ask-become-pass
+```
+
+Running the wordpress playbook against node 3:
+
+Note: node3 specification is in site.yml
+```
+ansible-playbook wordpress.yml --ask-become-pass
+```
+
 
