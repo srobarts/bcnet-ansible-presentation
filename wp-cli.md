@@ -52,3 +52,26 @@ Activating 'user-switching'...
 Plugin 'user-switching' network activated.
 Success: Installed 1 of 1 plugins.
 ```
+Un-install a plugin:
+```
+wp plugin uninstall hello
+```
+Output:
+```
+Uninstalled and deleted 'hello' plugin.
+Success: Uninstalled 1 of 1 plugins.
+```
+
+## Demonstration
+
+Use https://eportfoliostest.capilanou.ca
+
+
+Plugin install example:
+```
+wp plugin install contact-form-7 --activate
+```
+Theme install example
+```
+wp theme install davis --activate
+```
