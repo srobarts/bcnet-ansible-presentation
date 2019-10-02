@@ -19,8 +19,21 @@ sudo apt-get install ansible
 ```
 brew install ansible
 
-export ANSIBLE_HOSTS=~/code/ansible/hosts
 ```
+Then add an 'ansible.cfg' file to the location ~/.ansible
+With the following contents:
+
+```
+[defaults]
+stdout_callback = yaml
+connection = smart
+timeout = 60
+deprecation_warnings = False
+host_key_checking = False
+retry_files_enabled = False
+inventory = /Users/scottrobarts/code/ansible/hosts
+```
+Assuming you are going to keep your inventory file in ~/code/ansible/hosts
 
 
 
