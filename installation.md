@@ -18,6 +18,8 @@ sudo apt-get install ansible
 ( Using Homebrew: https://brew.sh/ )
 ```
 brew install ansible
+
+export ANSIBLE_HOSTS=~/code/ansible/hosts
 ```
 
 
